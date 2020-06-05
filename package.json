@@ -1,0 +1,27 @@
+{
+  "name": "alerter",
+  "version": "1.0.0",
+  "description": "Application server that prints a message at a given time in the future",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "start": "node ./index.js",
+    "dev": "nodemon ./index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/itomlev/alerter.git"
+  },
+  "author": "Tom Lev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/itomlev/alerter/issues"
+  },
+  "homepage": "https://github.com/itomlev/alerter#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
