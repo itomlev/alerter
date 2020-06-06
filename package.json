@@ -4,7 +4,6 @@
   "description": "Application server that prints a message at a given time in the future",
   "main": "index.js",
   "scripts": {
-    "test": "test",
     "start": "node ./index.js",
     "dev": "nodemon ./index.js"
   },
@@ -19,6 +18,7 @@
   },
   "homepage": "https://github.com/itomlev/alerter#readme",
   "dependencies": {
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "redis": "^3.0.2"
   },
