@@ -27,7 +27,10 @@ router.get('/messages/:time', (req, res, next) => {
 		if (error) {
 			return res.status(400).json({status: 'fail', message: `error get messages by time ${time}. Error: ${error}`});
 		}
-		console.log(setToJson(members));
+		let items = setToJson(members);
+		items.forEach(item => {
+			console.log(item);
+		});
 		res.status(200).json({status: 'success', message: setToJson(members)});
 	});
 });
