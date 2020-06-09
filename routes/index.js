@@ -13,9 +13,12 @@ router.post('/echoAtTime', (req, res, next) => {
 	}
 	// persist in Redis
 	let messageBody = `${reqBody.message}@@${reqBody.time}`;
-	redisClient.zadd('messages', reqBody.time, messageBody);
-
-	res.status(200).json({status: 'success', message: 'message has been registered successfully'});
+	redisClient.zadd('messages', reqBody.time, messageBody, (error, data) => {
+		if (error) {
+			return res.status(400).json({status: 'fail', message: `error get persist message ${reqBody.message} by time ${reqBody.time}. Error: ${error}`});
+		}
+		res.status(200).json({status: 'success', message: 'message has been registered successfully'});
+	});
 });
 
 router.get('/messages/:time', (req, res, next) => {
